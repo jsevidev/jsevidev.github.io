@@ -441,10 +441,8 @@ section {
 .grid-cases {
   display: grid;
   width: 100%;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr));
-}
-.grid-cases[data-case-count='1'] {
-  grid-template-columns: minmax(0, 1fr);
+  gap: 1.25rem;
+  grid-template-columns: 1fr;
 }
 .card.case {
   border-color: color-mix(in srgb, var(--acc) 28%, var(--line));
@@ -657,11 +655,12 @@ footer {
   .top-in {
     padding: 0 2rem;
   }
-  .grid-cases[data-case-count='1'] {
-    grid-template-columns: minmax(0, 19rem);
+  .grid-cases {
+    grid-template-columns: repeat(var(--case-cols, 1), minmax(0, 1fr));
   }
-  .grid-cases[data-case-count]:not([data-case-count='1']) {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  /* 4+ case studies: lone card on the last row uses full width */
+  .grid-cases .card.case:last-child:nth-child(3n + 1):not(:only-child) {
+    grid-column: 1 / -1;
   }
   .card.case {
     flex-direction: column;

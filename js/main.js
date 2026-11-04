@@ -112,7 +112,8 @@ const projectsGridHtml = (list) => {
   });
   let html = '';
   if (cases.length) {
-    html += `<p class="grid-label">Case studies</p><div class="grid grid-cases" data-case-count="${cases.length}">${cases.map((x, i) => card(x, i)).join('')}</div>`;
+    const caseCols = Math.min(3, cases.length);
+    html += `<p class="grid-label">Case studies</p><div class="grid grid-cases" data-case-count="${cases.length}" style="--case-cols:${caseCols}">${cases.map((x, i) => card(x, i)).join('')}</div>`;
   }
   if (rest.length) {
     html += `<p class="grid-label">All projects</p><div class="grid grid-rest">${rest.map((x, i) => card(x, i)).join('')}</div>`;
