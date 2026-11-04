@@ -28,13 +28,61 @@
       "name": "HTML, CSS, JavaScript",
       "projects": [
         "peso-connect",
-        "ocac-chords"
+        "ocac-chord-sheet",
+        "data-analytics-practice-quiz",
+        "yer-fire-mobile"
       ]
     },
     {
       "name": "Bootstrap",
       "projects": [
         "peso-connect"
+      ]
+    },
+    {
+      "name": "React",
+      "projects": [
+        "yer-fire-mobile",
+        "inventory-ui"
+      ]
+    },
+    {
+      "name": "Python",
+      "projects": [
+        "mpl-ph-stats",
+        "data-analysis-notebooks",
+        "selenium-lsu-test",
+        "cucumber-bdd-calculator",
+        "mutation-testing-calculator",
+        "security-fuzz-lab"
+      ]
+    },
+    {
+      "name": "Power BI",
+      "projects": [
+        "mpl-ph-stats"
+      ]
+    },
+    {
+      "name": "Unity",
+      "projects": [
+        "creative-core-2d",
+        "falling-slime",
+        "creative-core-ui"
+      ]
+    },
+    {
+      "name": "Selenium",
+      "projects": [
+        "selenium-lsu-test"
+      ]
+    },
+    {
+      "name": "Software testing (BDD, mutation, fuzz)",
+      "projects": [
+        "cucumber-bdd-calculator",
+        "mutation-testing-calculator",
+        "security-fuzz-lab"
       ]
     }
   ],
@@ -57,7 +105,7 @@
       "note": "Free hosting: the first load may take up to a minute.",
       "links": {
         "demo": "https://peso-connect-8i0o.onrender.com/",
-        "repo": ""
+        "repo": "https://github.com/jsevidev/peso-connect"
       },
       "images": [
         "assets/images/peso-2.jpg",
@@ -74,30 +122,52 @@
       }
     },
     {
-      "id": "ocac-chord-sheet",
-      "title": "OCAC Chord Sheet",
-      "type": "personal",
-      "summary": "Free, online, searchable chord sheets from the worship notebooks. Built with Jekyll, hosted on GitHub Pages.",
+      "id": "mpl-ph-hero-stats-pipeline",
+      "title": "MPL PH Hero Stats Pipeline",
+      "type": "school",
+      "summary": "Python pipeline that scrapes Liquipedia MPL Philippines hero statistics into structured Excel, links patch notes to seasons, and feeds Power BI models with DAX measures for pick/ban and meta analysis.",
       "stack": [
-        "HTML",
-        "CSS",
-        "JS"
+        "Python",
+        "Pandas",
+        "Excel",
+        "Power BI",
+        "DAX",
+        "Web scraping"
       ],
-      "date": "Sep 2026",
+      "date": "Oct 2026",
       "links": {
-        "demo": "https://jsevidev.github.io/ocac-worship-chords/",
-        "repo": "https://github.com/jsevidev/ocac-worship-chords"
+        "demo": "",
+        "repo": ""
       },
       "images": [
-        "assets/images/ocac-chord-sheet-3.jpg",
-        "assets/images/ocac-chord-sheet-4.jpg",
-        "assets/images/ocac-chord-sheet-6.jpg"
+        "assets/images/mpl-ph-hero-stats-pipeline-2.jpg",
+        "assets/images/mpl-ph-hero-stats-pipeline-3.jpg",
+        "assets/images/mpl-ph-hero-stats-pipeline-4.jpg"
       ]
+    },
+    {
+      "id": "data-analysis-notebooks",
+      "title": "Data Analysis Notebooks",
+      "type": "school",
+      "summary": "Coursework in Jupyter: NumPy and Pandas data frames, CSV workflows, and Module 5 visualization exercises exploring datasets with Python charts.",
+      "stack": [
+        "Python",
+        "Jupyter",
+        "NumPy",
+        "Pandas",
+        "Data visualization"
+      ],
+      "featured": true,
+      "date": "Sep 2026",
+      "links": {
+        "demo": "",
+        "repo": ""
+      }
     },
     {
       "id": "data-analytics-practice-quiz",
       "title": "Data Analytics Practice Quiz",
-      "type": "personal",
+      "type": "school",
       "summary": "Browser-based review app with 50 course questions; each session serves 10 random items with shuffled choices, scoring, and answer explanations.",
       "stack": [
         "HTML",
@@ -112,6 +182,160 @@
       "images": [
         "assets/images/data-analytics-practice-quiz.jpg",
         "assets/images/data-analytics-practice-quiz-2.jpg"
+      ]
+    },
+    {
+      "id": "creative-core-2d",
+      "title": "Creative Core 2D",
+      "type": "school",
+      "summary": "Unity 2D game project built for the Creative Core curriculum: player movement, level design, and core gameplay systems in C#.",
+      "stack": [
+        "Unity",
+        "C#",
+        "2D",
+        "Game Dev"
+      ],
+      "date": "Oct 2026",
+      "links": {
+        "demo": "",
+        "repo": ""
+      },
+      "images": [
+        "assets/images/creative-core-2d.jpg",
+        "assets/images/creative-core-2d-2.jpg"
+      ]
+    },
+    {
+      "id": "falling-slime",
+      "title": "Falling Slime!",
+      "type": "school",
+      "summary": "Playable Unity build of a 2D slime platformer with exported Windows player; focused on physics, level flow, and game feel.",
+      "stack": [
+        "Unity",
+        "C#",
+        "2D",
+        "Game Dev"
+      ],
+      "date": "Oct 2026",
+      "links": {
+        "demo": "",
+        "repo": ""
+      },
+      "images": [
+        "assets/images/falling-slime.jpg"
+      ]
+    },
+    {
+      "id": "creative-core-ui",
+      "title": "Creative Core UI",
+      "type": "school",
+      "summary": "Unity UI project for menus, HUD, and in-game interface layout as part of game development coursework.",
+      "stack": [
+        "Unity",
+        "C#",
+        "UI",
+        "Game Dev"
+      ],
+      "date": "Oct 2026",
+      "links": {
+        "demo": "",
+        "repo": ""
+      },
+      "images": [
+        "assets/images/creative-core-ui.jpg",
+        "assets/images/creative-core-ui-2.jpg"
+      ]
+    },
+    {
+      "id": "lsu-website-selenium-tests",
+      "title": "LSU Website Selenium Tests",
+      "type": "school",
+      "summary": "Automated browser tests against lsu.edu.ph using Selenium: discover usable links and images, navigate flows, and capture proof screenshots for QA coursework.",
+      "stack": [
+        "Python",
+        "Selenium",
+        "QA automation"
+      ],
+      "date": "Oct 2026",
+      "links": {
+        "demo": "",
+        "repo": ""
+      },
+      "images": [
+        "assets/images/lsu-website-selenium-tests.jpg"
+      ]
+    },
+    {
+      "id": "bdd-calculator-behave",
+      "title": "BDD Calculator (Behave)",
+      "type": "school",
+      "summary": "Calculator app driven by Gherkin feature files and Behave step definitions, practicing behavior-driven development and executable specifications.",
+      "stack": [
+        "Python",
+        "Behave",
+        "BDD",
+        "Gherkin"
+      ],
+      "date": "Sep 2026",
+      "links": {
+        "demo": "",
+        "repo": ""
+      }
+    },
+    {
+      "id": "mutation-testing-calculator",
+      "title": "Mutation Testing Calculator",
+      "type": "school",
+      "summary": "Python calculator with pytest suites and mutmut mutation testing to find weak tests and improve coverage quality.",
+      "stack": [
+        "Python",
+        "pytest",
+        "mutmut",
+        "Unit testing"
+      ],
+      "date": "Aug 2026",
+      "links": {
+        "demo": "",
+        "repo": ""
+      }
+    },
+    {
+      "id": "security-fuzz-lab",
+      "title": "Security Fuzz Lab",
+      "type": "school",
+      "summary": "Small vulnerable Python app plus fuzzing and pytest security starters to practice finding input-handling bugs in a controlled lab.",
+      "stack": [
+        "Python",
+        "pytest",
+        "Fuzzing",
+        "Security testing"
+      ],
+      "date": "Oct 2026",
+      "links": {
+        "demo": "",
+        "repo": ""
+      }
+    },
+    {
+      "id": "ocac-chord-sheet",
+      "title": "OCAC Chord Sheet",
+      "type": "personal",
+      "summary": "Free, online, searchable chord sheets from the worship notebooks. Built with Jekyll, hosted on GitHub Pages.",
+      "stack": [
+        "HTML",
+        "CSS",
+        "JS",
+        "Jekyll"
+      ],
+      "date": "Sep 2026",
+      "links": {
+        "demo": "https://jsevidev.github.io/ocac-worship-chords/",
+        "repo": "https://github.com/jsevidev/ocac-worship-chords"
+      },
+      "images": [
+        "assets/images/ocac-chord-sheet-3.jpg",
+        "assets/images/ocac-chord-sheet-4.jpg",
+        "assets/images/ocac-chord-sheet-6.jpg"
       ]
     }
   ]
