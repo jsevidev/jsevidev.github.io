@@ -429,10 +429,20 @@ section {
   gap: 1.25rem;
 }
 .grid-cases {
+  display: grid;
+  width: 100%;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr));
+}
+.grid-cases[data-case-count='1'] {
+  grid-template-columns: minmax(0, 1fr);
 }
 .card.case {
   border-color: color-mix(in srgb, var(--acc) 28%, var(--line));
+}
+.card.case,
+.card.case:hover {
+  grid-column: auto;
+  flex-direction: column;
 }
 .card {
   background: var(--surface);
@@ -637,8 +647,14 @@ footer {
   .top-in {
     padding: 0 2rem;
   }
-  .grid-cases {
+  .grid-cases[data-case-count='1'] {
+    grid-template-columns: minmax(0, 19rem);
+  }
+  .grid-cases[data-case-count]:not([data-case-count='1']) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .card.case {
+    flex-direction: column;
   }
   .card.big {
     grid-column: 1/-1;
