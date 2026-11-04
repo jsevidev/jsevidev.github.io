@@ -87,8 +87,27 @@ dataP
       '<p class="err">Could not load data/data.json. Deploy to GitHub Pages, or run: python -m http.server</p>'
     )
   );
+const hasCase = (x) =>
+  x.case &&
+  (String(x.case.problem || '').trim() ||
+    String(x.case.role || '').trim() ||
+    (x.case.hard || []).some((h) => String(h).trim()));
+const cardClass = (x) => {
+  if (hasCase(x)) return ' case';
+  if (x.featured) return ' big';
+  return '';
+};
 const card = (x, i) =>
-  `<article class="card rv${x.featured ? ' big' : ''}" style="--i:${i % 3}"><div class="cover">${x.images?.[0] ? `<img src="${esc(x.images[0])}" alt="" width="640" height="400" loading="lazy" decoding="async">` : esc(x.title[0])}</div><div class="cbody"><span class="pill">${esc(x.type)}</span><h3>${esc(x.title)}</h3><p>${esc(x.summary)}</p><div>${tags(x.stack)}</div>${x.note ? `<small>${esc(x.note)}</small>` : ''}<div class="row">${x.featured ? `<a class="btn" href="project.html?id=${esc(x.id)}">Read Case Study →</a>` : ''}${btns(x)}</div></div></article>`;
+  `<article class="card rv${cardClass(x)}" style="--i:${i % 3}"><div class="cover">${x.images?.[0] ? `<img src="${esc(x.images[0])}" alt="" width="640" height="400" loading="lazy" decoding="async">` : esc(x.title[0])}</div><div class="cbody"><span class="pill">${esc(x.type)}</span><h3>${esc(x.title)}</h3><p>${esc(x.summary)}</p><div>${tags(x.stack)}</div>${x.note ? `<small>${esc(x.note)}</small>` : ''}<div class="row">${hasCase(x) ? `<a class="btn" href="project.html?id=${esc(x.id)}">Read Case Study →</a>` : ''}${btns(x)}</div></div></article>`;
+const projectsGridHtml = (list) => {
+  const cases = list.filter(hasCase);
+  const rest = list.filter((x) => !hasCase(x));
+  let html = '';
+  if (cases.length)
+    html += `<div class="grid grid-cases">${cases.map((x, i) => card(x, i)).join('')}</div>`;
+  if (rest.length) html += `<div class="grid">${rest.map((x, i) => card(x, i)).join('')}</div>`;
+  return html || '<div class="grid"></div>';
+};
 function home(d) {
   const p = d.profile,
     P = d.projects;
@@ -120,9 +139,7 @@ function home(d) {
     .join('');
   const types = ['all', ...new Set(P.map((x) => x.type))];
   const show = (t) => {
-    $('#list').innerHTML = P.filter((x) => t === 'all' || x.type === t)
-      .map(card)
-      .join('');
+    $('#list').innerHTML = projectsGridHtml(P.filter((x) => t === 'all' || x.type === t));
     $$('#filters button').forEach((b) => b.setAttribute('aria-pressed', b.dataset.t === t));
     reveal();
   };

@@ -423,6 +423,17 @@ section {
   gap: 1.25rem;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr));
 }
+#list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.grid-cases {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr));
+}
+.card.case {
+  border-color: color-mix(in srgb, var(--acc) 28%, var(--line));
+}
 .card {
   background: var(--surface);
   border: 1px solid var(--line);
@@ -625,6 +636,9 @@ footer {
   .wrap,
   .top-in {
     padding: 0 2rem;
+  }
+  .grid-cases {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .card.big {
     grid-column: 1/-1;
