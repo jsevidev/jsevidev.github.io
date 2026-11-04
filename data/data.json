@@ -14,19 +14,28 @@
   "skills": [
     {
       "name": "Laravel and PHP",
-      "projects": ["peso-connect"]
+      "projects": [
+        "peso-connect"
+      ]
     },
     {
       "name": "MySQL",
-      "projects": ["peso-connect"]
+      "projects": [
+        "peso-connect"
+      ]
     },
     {
       "name": "HTML, CSS, JavaScript",
-      "projects": ["peso-connect", "ocac-chords"]
+      "projects": [
+        "peso-connect",
+        "ocac-chords"
+      ]
     },
     {
       "name": "Bootstrap",
-      "projects": ["peso-connect"]
+      "projects": [
+        "peso-connect"
+      ]
     }
   ],
   "projects": [
@@ -34,10 +43,17 @@
       "id": "peso-connect",
       "title": "PESO Connect",
       "type": "school",
+      "summary": "A web-based system that digitizes PESO Ozamiz City's job seeker enlistment, employer record-keeping, referral issuance, first-time jobseeker certification, and DOLE reporting for staff-operated use, with no applicant or employer accounts required.",
+      "stack": [
+        "Laravel",
+        "MySQL",
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Bootstrap"
+      ],
       "featured": true,
       "date": "May 2026",
-      "summary": "A web-based system that digitizes PESO Ozamiz City's job seeker enlistment, employer record-keeping, referral issuance, first-time jobseeker certification, and DOLE reporting for staff-operated use, with no applicant or employer accounts required.",
-      "stack": ["Laravel", "MySQL", "HTML", "CSS", "JavaScript", "Bootstrap"],
       "note": "Free hosting: the first load may take up to a minute.",
       "links": {
         "demo": "https://peso-connect-8i0o.onrender.com/",
@@ -58,17 +74,20 @@
       }
     },
     {
-      "id": "ocac-chords",
+      "id": "ocac-chord-sheet",
       "title": "OCAC Chord Sheet",
       "type": "personal",
-      "featured": false,
       "summary": "Free, online, searchable chord sheets from the worship notebooks. Built with Jekyll, hosted on GitHub Pages.",
-      "stack": ["HTML", "CSS", "JS"],
+      "stack": [
+        "HTML",
+        "CSS",
+        "JS"
+      ],
+      "date": "Sep 2026",
       "links": {
         "demo": "https://jsevidev.github.io/ocac-worship-chords/",
         "repo": "https://github.com/jsevidev/ocac-worship-chords"
-      },
-      "date": "Sep 2026"
+      }
     }
   ]
 }
