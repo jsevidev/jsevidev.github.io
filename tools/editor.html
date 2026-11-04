@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio content editor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      try {
+        document.documentElement.dataset.theme =
+          localStorage.getItem('theme') ||
+          (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      } catch (e) {}
+    </script>
+    <link rel="stylesheet" href="editor.css" />
+  </head>
+  <body>
+    <header class="top">
+      <div class="top-in">
+        <h1>Portfolio content editor <span id="server-status" class="status">Checking…</span></h1>
+        <div class="actions">
+          <button type="button" class="btn ghost" id="btn-reload">Reload data.json</button>
+          <button type="button" class="btn ghost" id="btn-import">Import JSON</button>
+          <button type="button" class="btn ghost" id="btn-copy">Copy JSON</button>
+          <button type="button" class="btn" id="btn-save">Save</button>
+          <a class="btn ghost" href="../index.html" target="_blank" rel="noopener">Preview site</a>
+        </div>
+      </div>
+    </header>
+    <p class="hint" id="save-hint">
+      Start <strong>python tools/dev_server.py</strong> from the portfolio folder (not plain
+      <code>http.server</code>). Open the editor URL printed in the terminal (default port
+      <strong>8765</strong>),
+      then click <strong>Save</strong> to write <strong>data/data.json</strong>. Upload screenshots on each
+      project — they go to <strong>assets/images/</strong> automatically. Commit and push both JSON and new
+      images for GitHub Pages. Edits auto-save as a browser draft until you save to disk.
+      <button type="button" class="btn ghost" id="btn-clear-draft" style="min-height:2rem;padding:0 0.65rem;font-size:0.75rem">
+        Clear draft
+      </button>
+    </p>
+    <nav class="tabs" aria-label="Sections">
+      <button type="button" class="tab" data-tab="projects" aria-selected="true">Projects</button>
+      <button type="button" class="tab" data-tab="profile">Profile</button>
+      <button type="button" class="tab" data-tab="skills">Skills</button>
+      <button type="button" class="tab" data-tab="certs">Certs</button>
+    </nav>
+    <main class="wrap" id="panel"></main>
+    <input type="file" id="file-import" accept="application/json,.json" hidden />
+    <div class="toast" id="toast" role="status"></div>
+    <script src="editor.js?v=3"></script>
+  </body>
+</html>

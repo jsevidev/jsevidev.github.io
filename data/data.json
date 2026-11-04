@@ -87,7 +87,32 @@
       "links": {
         "demo": "https://jsevidev.github.io/ocac-worship-chords/",
         "repo": "https://github.com/jsevidev/ocac-worship-chords"
-      }
+      },
+      "images": [
+        "assets/images/ocac-chord-sheet-3.jpg",
+        "assets/images/ocac-chord-sheet-4.jpg",
+        "assets/images/ocac-chord-sheet-6.jpg"
+      ]
+    },
+    {
+      "id": "data-analytics-practice-quiz",
+      "title": "Data Analytics Practice Quiz",
+      "type": "personal",
+      "summary": "Browser-based review app with 50 course questions; each session serves 10 random items with shuffled choices, scoring, and answer explanations.",
+      "stack": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
+      "date": "July 2026",
+      "links": {
+        "demo": "https://jsevidev.github.io/Data-Analytics/",
+        "repo": "https://github.com/jsevidev/Data-Analytics"
+      },
+      "images": [
+        "assets/images/data-analytics-practice-quiz.jpg",
+        "assets/images/data-analytics-practice-quiz-2.jpg"
+      ]
     }
   ]
 }
