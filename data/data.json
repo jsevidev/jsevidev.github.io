@@ -122,49 +122,6 @@
       }
     },
     {
-      "id": "mpl-ph-hero-stats-pipeline",
-      "title": "MPL PH Hero Stats Pipeline",
-      "type": "school",
-      "summary": "Python pipeline that scrapes Liquipedia MPL Philippines hero statistics into structured Excel, links patch notes to seasons, and feeds Power BI models with DAX measures for pick/ban and meta analysis.",
-      "stack": [
-        "Python",
-        "Pandas",
-        "Excel",
-        "Power BI",
-        "DAX",
-        "Web scraping"
-      ],
-      "date": "Oct 2026",
-      "links": {
-        "demo": "",
-        "repo": ""
-      },
-      "images": [
-        "assets/images/mpl-ph-hero-stats-pipeline-2.jpg",
-        "assets/images/mpl-ph-hero-stats-pipeline-3.jpg",
-        "assets/images/mpl-ph-hero-stats-pipeline-4.jpg"
-      ]
-    },
-    {
-      "id": "data-analysis-notebooks",
-      "title": "Data Analysis Notebooks",
-      "type": "school",
-      "summary": "Coursework in Jupyter: NumPy and Pandas data frames, CSV workflows, and Module 5 visualization exercises exploring datasets with Python charts.",
-      "stack": [
-        "Python",
-        "Jupyter",
-        "NumPy",
-        "Pandas",
-        "Data visualization"
-      ],
-      "featured": true,
-      "date": "Sep 2026",
-      "links": {
-        "demo": "",
-        "repo": ""
-      }
-    },
-    {
       "id": "data-analytics-practice-quiz",
       "title": "Data Analytics Practice Quiz",
       "type": "school",
@@ -311,6 +268,48 @@
         "Security testing"
       ],
       "date": "Oct 2026",
+      "links": {
+        "demo": "",
+        "repo": ""
+      }
+    },
+    {
+      "id": "mpl-ph-hero-stats-pipeline",
+      "title": "MPL PH Hero Stats Pipeline",
+      "type": "school",
+      "summary": "Python pipeline that scrapes Liquipedia MPL Philippines hero statistics into structured Excel, links patch notes to seasons, and feeds Power BI models with DAX measures for pick/ban and meta analysis.",
+      "stack": [
+        "Python",
+        "Pandas",
+        "Excel",
+        "Power BI",
+        "DAX",
+        "Web scraping"
+      ],
+      "date": "Oct 2026",
+      "links": {
+        "demo": "",
+        "repo": ""
+      },
+      "images": [
+        "assets/images/mpl-ph-hero-stats-pipeline-2.jpg",
+        "assets/images/mpl-ph-hero-stats-pipeline-3.jpg",
+        "assets/images/mpl-ph-hero-stats-pipeline-4.jpg"
+      ]
+    },
+    {
+      "id": "data-analysis-notebooks",
+      "title": "Data Analysis Notebooks",
+      "type": "school",
+      "summary": "Coursework in Jupyter: NumPy and Pandas data frames, CSV workflows, and Module 5 visualization exercises exploring datasets with Python charts.",
+      "stack": [
+        "Python",
+        "Jupyter",
+        "NumPy",
+        "Pandas",
+        "Data visualization"
+      ],
+      "date": "Sep 2026",
       "links": {
         "demo": "",
         "repo": ""

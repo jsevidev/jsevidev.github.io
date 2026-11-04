@@ -92,11 +92,9 @@ const hasCase = (x) =>
   (String(x.case.problem || '').trim() ||
     String(x.case.role || '').trim() ||
     (x.case.hard || []).some((h) => String(h).trim()));
-const cardClass = (x) => {
-  if (hasCase(x)) return ' case';
-  if (x.featured) return ' big';
-  return '';
-};
+/** Featured only drives the hero spot, not card size in the grid. */
+const cardClass = (x) => (hasCase(x) ? ' case' : '');
+const restRank = (x) => (x.links?.demo ? 0 : x.images?.[0] ? 1 : 2);
 const card = (x, i) =>
   `<article class="card rv${cardClass(x)}" style="--i:${i % 3}"><div class="cover">${x.images?.[0] ? `<img src="${esc(x.images[0])}" alt="" width="640" height="400" loading="lazy" decoding="async">` : esc(x.title[0])}</div><div class="cbody"><span class="pill">${esc(x.type)}</span><h3>${esc(x.title)}</h3><p>${esc(x.summary)}</p><div>${tags(x.stack)}</div>${x.note ? `<small>${esc(x.note)}</small>` : ''}<div class="row">${hasCase(x) ? `<a class="btn" href="project.html?id=${esc(x.id)}">Read Case Study →</a>` : ''}${btns(x)}</div></div></article>`;
 const caseFirst = (list) => {
@@ -108,11 +106,17 @@ const caseFirst = (list) => {
 const projectsGridHtml = (list) => {
   const ordered = caseFirst(list);
   const cases = ordered.filter(hasCase);
-  const rest = ordered.filter((x) => !hasCase(x));
+  const rest = ordered.filter((x) => !hasCase(x)).sort((a, b) => {
+    const d = restRank(a) - restRank(b);
+    return d !== 0 ? d : ordered.indexOf(a) - ordered.indexOf(b);
+  });
   let html = '';
-  if (cases.length)
-    html += `<div class="grid grid-cases" data-case-count="${cases.length}">${cases.map((x, i) => card(x, i)).join('')}</div>`;
-  if (rest.length) html += `<div class="grid grid-rest">${rest.map((x, i) => card(x, i)).join('')}</div>`;
+  if (cases.length) {
+    html += `<p class="grid-label">Case studies</p><div class="grid grid-cases" data-case-count="${cases.length}">${cases.map((x, i) => card(x, i)).join('')}</div>`;
+  }
+  if (rest.length) {
+    html += `<p class="grid-label">All projects</p><div class="grid grid-rest">${rest.map((x, i) => card(x, i)).join('')}</div>`;
+  }
   return html || '<div class="grid grid-rest"></div>';
 };
 function home(d) {

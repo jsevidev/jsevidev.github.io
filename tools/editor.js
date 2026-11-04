@@ -432,7 +432,7 @@ function renderProjectForm() {
       ${field('Date', 'e.g. May 2026', `<input id="p-date" value="${esc(p.date || '')}">`)}
       ${field('Note', 'Optional small text under the card (e.g. slow cold start).', `<input id="p-note" value="${esc(p.note || '')}">`)}
     </div>
-    <label class="check"><input type="checkbox" id="p-featured" ${p.featured ? 'checked' : ''}><span><strong>Featured</strong> — larger card; can link to a case study</span></label>
+    <label class="check"><input type="checkbox" id="p-featured" ${p.featured ? 'checked' : ''}><span><strong>Featured</strong> — hero image on the home page only (not card size). Use case study fields below for “Read Case Study”.</span></label>
     ${renderImageUpload(p)}
     ${field('Image paths', 'First path is the card cover. Edit manually if needed.', `<textarea id="p-images">${esc((p.images || []).join('\n'))}</textarea>`)}
     <details class="case" ${p._showCase ? 'open' : ''}>
